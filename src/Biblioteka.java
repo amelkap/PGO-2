@@ -41,5 +41,32 @@ public class Biblioteka {
         }
         return n;
     }
+    public void wypozyczKsiazke(String tytul, Czytelnik czytelnik) {
+        Ksiazka k = znajdzKsiazkePoTytule(tytul);
+        if (k == null) {
+            System.out.println("Brak ksiazki o tytule: " + tytul);
+            return;
+        }
+        if (!k.isDostepna()) {
+            System.out.println("Ksiazka juz wypozyczona");
+            return;
+        }
+        k.wypozycz();
+        czytelnik.zwiekszLiczbeWypozyczen();
+    }
+
+    public void zwrocKsiazke(String tytul, Czytelnik czytelnik) {
+        Ksiazka k = znajdzKsiazkePoTytule(tytul);
+        if (k == null) {
+            System.out.println("Brak ksiazki o tytule: " + tytul);
+            return;
+        }
+        if (k.isDostepna()) {
+            System.out.println("Ksiazka nie byla wypozyczona");
+            return;
+        }
+        k.zwroc();
+        czytelnik.zmniejszLiczbeWypozyczen();
+    }
 
 }
