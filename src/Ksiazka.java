@@ -30,4 +30,12 @@ public class Ksiazka {
         dostepna = true;
         System.out.println("Ksiazka zostala zwrocona");
     }
+
+    public String getTytul() {
+        return tytul;
+    }
+
+    public boolean isDostepna() {
+        return dostepna;
+    }
 }
