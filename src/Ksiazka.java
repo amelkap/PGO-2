@@ -15,6 +15,7 @@ public class Ksiazka {
         System.out.println("Autor: " + autor);
         System.out.println("Strony: " + liczbaStron);
         System.out.println("Dostepna:" + dostepna);
+        System.out.println();
     }
 
     public void wypozycz(){
